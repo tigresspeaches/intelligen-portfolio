@@ -1,57 +1,333 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intelligen | Welcome</title>
-  <meta name="description" content="Welcome to Intelligen, where ideas meet intelligence.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Intelligent Automation Developer specializing in Automation Anywhere 360, Python, API integration, AWS, and enterprise process automation.">
+  <title>Intelligen | Intelligent Automation Portfolio</title>
   <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111a2e;
+      --text: #f3f6ff;
+      --muted: #aab6cf;
+      --blue: #7c9cff;
+      --line: #27334c;
+    }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: #f5f7ff;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
     }
+    a { color: inherit; }
+    .container { width: min(1100px, 90%); margin: auto; }
     header {
-      padding: 24px 8%;
-      border-bottom: 1px solid #293149;
-      font-size: 1.4rem;
-      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(11,16,32,.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
-    main {
-      min-height: 75vh;
-      display: grid;
-      place-content: center;
-      text-align: center;
-      padding: 40px 20px;
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
-    h1 { font-size: clamp(2.5rem, 7vw, 5rem); margin-bottom: 16px; }
-    p { color: #b7c1d9; line-height: 1.7; }
-    a {
-      display: inline-block;
-      margin: 24px auto;
-      padding: 14px 24px;
-      background: #7188ff;
-      color: #fff;
+    .logo { font-size: 1.35rem; font-weight: 800; letter-spacing: -.5px; }
+    .logo span { color: var(--blue); }
+    .navlinks { display: flex; gap: 22px; flex-wrap: wrap; }
+    .navlinks a {
+      color: var(--muted);
+      font-size: .9rem;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
     }
-    footer { text-align: center; padding: 24px; color: #929db6; }
+    .navlinks a:hover { color: var(--blue); }
+    .hero { padding: 100px 0 90px; }
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.7rem);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 850px;
+      margin: 18px 0;
+    }
+    h1 span {
+      background: linear-gradient(100deg, #9ab5ff, #71e0d0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .intro { max-width: 720px; color: var(--muted); font-size: 1.1rem; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--line);
+    }
+    .primary { background: var(--blue); color: #091022; border-color: var(--blue); }
+    section { padding: 68px 0; border-top: 1px solid var(--line); }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 8px 0; }
+    .section-intro { color: var(--muted); max-width: 720px; margin-bottom: 30px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .project {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+    .project:first-child { grid-column: 1 / -1; }
+    .project-label {
+      color: var(--blue);
+      font-size: .76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    h3 { font-size: 1.35rem; line-height: 1.35; margin: 10px 0; }
+    .company { color: var(--muted); font-size: .9rem; }
+    .project p { color: #d2d9e9; }
+    .project h4 { margin: 12px 0 5px; font-size: .95rem; }
+    ul { padding-left: 20px; }
+    li { margin: 7px 0; color: #d2d9e9; }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 18px; }
+    .tag {
+      font-size: .78rem;
+      padding: 5px 10px;
+      color: #c8d5ff;
+      background: #1a2742;
+      border: 1px solid #2a3b5c;
+      border-radius: 20px;
+    }
+    .skills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .skill {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: var(--panel);
+    }
+    .about {
+      background: linear-gradient(135deg, #121d34, #0b1020);
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: #d2d9e9;
+    }
+    .contact-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 30px;
+    }
+    footer {
+      padding: 26px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 700px) {
+      .navlinks { gap: 12px; }
+      .navlinks a { font-size: .8rem; }
+      .hero { padding: 68px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .project:first-child { grid-column: auto; }
+      h1 { letter-spacing: -1px; }
+    }
   </style>
 </head>
 <body>
-  <header>Intelligen</header>
-  <main>
-    <div>
-      <h1>Ideas meet intelligence.</h1>
-      <p>Welcome to Intelligen.<br>
-      We're building something meaningful. Stay tuned.</p>
-      <a href="mailto:hello@example.com">Get in touch</a>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home" style="text-decoration:none">Intelligen<span>.</span></a>
+    <div class="navlinks">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
-  </main>
-  <footer>&copy; 2026 Intelligen. All rights reserved.</footer>
+  </nav>
+</header>
+
+<main>
+  <div class="container hero" id="home">
+    <div class="eyebrow">Enterprise Automation · API Integration · Process Engineering</div>
+    <h1>Building smarter workflows through <span>intelligent automation.</span></h1>
+    <p class="intro">
+      I develop enterprise automation solutions that connect business
+      applications, orchestrate complex workflows, process data, and
+      improve operational reliability. My experience spans Automation
+      Anywhere 360, Python, REST and SOAP APIs, AWS, and enterprise systems.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore My Projects ↓</a>
+      <a class="btn" href="#contact">Contact Me</a>
+    </div>
+  </div>
+  <section id="projects">
+    <div class="container">
+      <div class="eyebrow">Selected Work</div>
+      <h2 class="section-title">Enterprise automation in action.</h2>
+      <p class="section-intro">
+        Examples of automation solutions involving financial reporting,
+        document processing, system integration, data validation, and
+        business operations.
+      </p>
+      <div class="grid">
+        <article class="project">
+          <div class="project-label">01 · Financial Automation</div>
+          <h3>Oracle Fusion Revenue Automation</h3>
+          <div class="company">Triumvirate LLC</div>
+          <p>
+            Built an end-to-end revenue reporting workflow that retrieves
+            timestamp-based reporting data, processes Excel records, submits
+            requests through a SOAP web service, retrieves results through
+            REST APIs, and delivers reports to SharePoint.
+          </p>
+          <h4>Engineering highlights</h4>
+          <ul>
+            <li>Used the previous run timestamp and current time to define the reporting window.</li>
+            <li>Mapped Excel row values, null values, and detail values into dictionaries for a subtask bot with 37 submission parameters.</li>
+            <li>Polled API request status, decoded JSON response content, extracted process IDs, and retrieved XML output.</li>
+            <li>Transformed XML data into Excel, uploaded reports to SharePoint, and sent HTML email summaries.</li>
+            <li>Managed temporary-file cleanup and persisted the timestamp for the next run.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Automation Anywhere 360</span>
+            <span class="tag">Python</span>
+            <span class="tag">REST / SOAP</span>
+            <span class="tag">JSON / XML</span>
+            <span class="tag">Oracle Fusion</span>
+            <span class="tag">SharePoint</span>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-label">02 · Intelligent Document Processing</div>
+          <h3>Benefits Forms & Human-in-the-Loop Workflow</h3>
+          <div class="company">Alight Solutions</div>
+          <p>
+            Developed a multistep benefits document workflow that processed
+            TIFF files through AWS services, prepared PDF documents for AARI
+            Copilot, and enabled human validation before updating business data.
+          </p>
+          <h4>Engineering highlights</h4>
+          <ul>
+            <li>Uploaded TIFF files to AWS S3 and retrieved Lambda-processed versions.</li>
+            <li>Converted documents to PDF for downstream processing.</li>
+            <li>Designed an AARI Create Request workflow for human review and data validation.</li>
+            <li>Applied validated changes to SQL Server and handled cleanup and notifications.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">AARI Copilot</span>
+            <span class="tag">AWS S3</span>
+            <span class="tag">AWS Lambda</span>
+            <span class="tag">SQL Server</span>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-label">03 · Financial Operations</div>
+          <h3>Right to Offset Automation</h3>
+          <div class="company">Security Service Federal Credit Union</div>
+          <p>
+            Automated a workflow for processing overdue-loan payment data,
+            interacting with a mainframe, validating execution, and distributing
+            archived results to business stakeholders.
+          </p>
+          <h4>Engineering highlights</h4>
+          <ul>
+            <li>Ingested Excel files and transformed data using VBScript.</li>
+            <li>Authenticated to a mainframe using credential vault authentication.</li>
+            <li>Executed macros and used OCR to validate successful completion.</li>
+            <li>Generated output files, created an archive, and emailed the business a results link.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Automation Anywhere 360</span>
+            <span class="tag">Mainframe</span>
+            <span class="tag">VBScript</span>
+            <span class="tag">OCR</span>
+            <span class="tag">Credential Vault</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <div class="container">
+      <div class="eyebrow">Technical Expertise</div>
+      <h2 class="section-title">Tools I use to solve problems.</h2>
+      <p class="section-intro">
+        Technologies and platforms applied across my enterprise automation work.
+      </p>
+      <div class="skills">
+        <span class="skill">Automation Anywhere 360</span>
+        <span class="skill">Python</span>
+        <span class="skill">REST APIs</span>
+        <span class="skill">SOAP Web Services</span>
+        <span class="skill">JSON & XML</span>
+        <span class="skill">Oracle Fusion</span>
+        <span class="skill">AWS S3</span>
+        <span class="skill">AWS Lambda</span>
+        <span class="skill">AARI Copilot</span>
+        <span class="skill">SQL Server</span>
+        <span class="skill">SharePoint</span>
+        <span class="skill">VBScript</span>
+        <span class="skill">OCR</span>
+        <span class="skill">Mainframe Automation</span>
+        <span class="skill">Excel Automation</span>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <div class="container">
+      <div class="eyebrow">Professional Approach</div>
+      <h2 class="section-title">Automation built for real business workflows.</h2>
+      <div class="about">
+        My work focuses on connecting systems and automating multistep
+        business processes, from data extraction and transformation to API
+        orchestration, validation, reporting, and exception-aware workflows.
+        I value reliable execution, secure authentication, clear business
+        communication, and traceable process outcomes.
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <div class="contact-panel">
+        <div class="eyebrow">Let's Connect</div>
+        <h2 class="section-title">Looking for an automation professional?</h2>
+        <p class="section-intro">
+          I'm interested in opportunities involving enterprise automation,
+          RPA development, Python integrations, and intelligent workflows.
+          Get in touch to discuss how my experience could support your team.
+        </p>
+        <!-- Add your professional email and LinkedIn URL before launch. -->
+        <p>Contact details coming soon.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    Intelligen · Intelligent Automation Portfolio · © 2026
+  </div>
+</footer>
 </body>
 </html>
