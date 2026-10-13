@@ -1,0 +1,101 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="benefits-flow" name="Intelligen Benefits Automation">
+    <mxGraphModel dx="956" dy="479" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#0B1020;" value="INTELLIGEN | BENEFITS FORMS AUTOMATION&#xa;Document Processing and Human-in-the-Loop Validation" vertex="1">
+          <mxGeometry height="60" width="800" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lane1" parent="1" style="swimlane;html=1;startSize=35;horizontal=1;fillColor=#7C9CFF;swimlaneFillColor=#F3F6FF;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="AUTOMATED DOCUMENT PROCESSING" vertex="1">
+          <mxGeometry height="510" width="1100" x="100" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="START&#xa;Benefits forms received" vertex="1">
+          <mxGeometry height="55" width="220" x="470" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Upload TIFF files&#xa;to AWS S3 bucket" vertex="1">
+          <mxGeometry height="60" width="220" x="470" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Retrieve latest Lambda-processed&#xa;document version from S3" vertex="1">
+          <mxGeometry height="65" width="280" x="440" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="convert" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Convert TIFF to PDF&#xa;Prepare document for AARI Copilot" vertex="1">
+          <mxGeometry height="65" width="280" x="440" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="request" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#7C9CFF;fontColor=#F3F6FF;fontStyle=1;" value="AARI COPILOT&#xa;Create Request process&#xa;Extract and prepare form data" vertex="1">
+          <mxGeometry height="70" width="280" x="440" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2" parent="1" style="swimlane;html=1;startSize=35;horizontal=1;fillColor=#71E0D0;swimlaneFillColor=#F3F6FF;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="HUMAN-IN-THE-LOOP REVIEW AND DATA UPDATE" vertex="1">
+          <mxGeometry height="470" width="1100" x="100" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="review" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDF9F5;strokeColor=#71E0D0;fontColor=#0B1020;" value="Present form data for&#xa;Human-in-the-Loop review" vertex="1">
+          <mxGeometry height="65" width="280" x="440" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="validate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDF9F5;strokeColor=#71E0D0;fontColor=#0B1020;" value="Business user validates&#xa;and updates form fields" vertex="1">
+          <mxGeometry height="65" width="280" x="440" y="795" as="geometry" />
+        </mxCell>
+        <mxCell id="compare" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Compare original data&#xa;against user updates" vertex="1">
+          <mxGeometry height="65" width="280" x="440" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="sql" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="Apply validated changes&#xa;to SQL Server" vertex="1">
+          <mxGeometry height="65" width="280" x="440" y="985" as="geometry" />
+        </mxCell>
+        <mxCell id="lane3" parent="1" style="swimlane;html=1;startSize=35;horizontal=1;fillColor=#0B1020;swimlaneFillColor=#F3F6FF;strokeColor=#0B1020;fontColor=#F3F6FF;fontStyle=1;" value="COMPLETION AND HOUSEKEEPING" vertex="1">
+          <mxGeometry height="270" width="1100" x="100" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="cleanup" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Clean up temporary&#xa;TIFF and PDF files" vertex="1">
+          <mxGeometry height="65" width="240" x="300" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="notify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDF9F5;strokeColor=#71E0D0;fontColor=#0B1020;" value="Send completion notification&#xa;to business stakeholders" vertex="1">
+          <mxGeometry height="65" width="280" x="650" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#71E0D0;fontColor=#F3F6FF;fontStyle=1;" value="END&#xa;Traceable digital workflow" vertex="1">
+          <mxGeometry height="55" width="220" x="470" y="1300" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="upload">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="upload" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="lambda">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="lambda" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="convert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="convert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="validate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="validate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="compare">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="compare" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="sql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="sql" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="cleanup">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="1125" />
+              <mxPoint x="420" y="1125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="cleanup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="notify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="notify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="1280" />
+              <mxPoint x="580" y="1280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,138 @@
+
+<mxfile host="app.diagrams.net">
+  <diagram id="oracle-revenue" name="Oracle Fusion Revenue Automation">
+    <mxGraphModel dx="1200" dy="1600" grid="1" gridSize="10" page="1" pageWidth="1200" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="INTELLIGEN | ORACLE FUSION REVENUE AUTOMATION&#xa;Financial Reporting and End-to-End Processing" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="180" y="20" width="840" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="start" value="START&#xa;Begin automation" style="ellipse;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="110" width="220" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="timestamp" value="Read previous run timestamp&#xa;from TXT file" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="420" y="200" width="300" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="currenttime" value="Get current date/time&#xa;for report through-date" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="420" y="290" width="300" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="reportapi" value="REST API: Generate daily revenue report&#xa;Start = previous timestamp&#xa;Through = current timestamp&#xa;Output: XLSX" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7C9CFF;strokeColor=#0B1020;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="380" y="380" width="380" height="85" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="renamesource" value="Rename source report&#xa;with date/time stamp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="420" y="495" width="300" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uploadsource" value="Upload source report&#xa;to SharePoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="420" y="585" width="300" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="readexcel" value="Read Excel report output&#xa;into row table" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="420" y="675" width="300" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="loop" value="FOR EACH EXCEL ROW" style="hexagon;whiteSpace=wrap;html=1;fillColor=#7C9CFF;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="765" width="260" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lists" value="Extract Excel values&#xa;Build Excel value list, null value list, and detail value list" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="370" y="865" width="400" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="dictionary" value="Combine lists into dictionary&#xa;Map 37 form parameters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="390" y="965" width="360" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="subtask" value="SUBTASK BOT&#xa;Generate submit form&#xa;Pass 37 parameters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#7C9CFF;fontColor=#F3F6FF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1060" width="360" height="75" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="soap" value="SOAP Web Service API&#xa;Submit form and create request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#71E0D0;fontColor=#F3F6FF;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1165" width="360" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="status" value="REST GET: Request status&#xa;Parse JSON response and status node" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1260" width="360" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="statusdecision" value="Request&#xa;completed?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1355" width="220" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="childid" value="REST GET: Child process ID&#xa;Decode JSON content bytes with Python&#xa;Create/read TXT and extract parent process ID" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1355" width="350" height="85" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="parentapi" value="REST GET: Retrieve parent process result&#xa;Decode JSON content bytes with Python&#xa;Create XML download file" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1470" width="350" height="85" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="xmlextract" value="Extract data from XML&#xa;Write values to output Excel spreadsheet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1585" width="350" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="morerows" value="More Excel&#xa;rows?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1580" width="220" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="renamefinal" value="Rename final spreadsheet&#xa;with date/time stamp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1730" width="360" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uploadfinal" value="Upload final spreadsheet&#xa;to SharePoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1825" width="360" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="email" value="Send business notification&#xa;HTML table with subtask bot values" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#71E0D0;fontColor=#F3F6FF;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1915" width="360" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cleanup" value="Clean up temporary files" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2010" width="360" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="writets" value="Get current date/time&#xa;Write timestamp TXT for next run" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2095" width="360" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end" value="END" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#71E0D0;fontColor=#F3F6FF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="2190" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="start" target="timestamp" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="timestamp" target="currenttime" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="currenttime" target="reportapi" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="reportapi" target="renamesource" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="renamesource" target="uploadsource" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="uploadsource" target="readexcel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="readexcel" target="loop" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="loop" target="lists" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="lists" target="dictionary" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="dictionary" target="subtask" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="subtask" target="soap" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="soap" target="status" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="status" target="statusdecision" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" value="Yes" edge="1" parent="1" source="statusdecision" target="childid" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="childid" target="parentapi" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="parentapi" target="xmlextract" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="xmlextract" target="morerows" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="850" y="1625"/><mxPoint x="710" y="1625"/></Array></mxGeometry></mxCell>
+        <mxCell id="e18" value="Yes: next row" edge="1" parent="1" source="morerows" target="loop" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#7C9CFF;strokeWidth=2;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="320" y="1625"/><mxPoint x="320" y="798"/></Array></mxGeometry></mxCell>
+        <mxCell id="e19" value="No" edge="1" parent="1" source="morerows" target="renamefinal" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="570" y="1685"/><mxPoint x="570" y="1710"/></Array></mxGeometry></mxCell>
+        <mxCell id="e20" value="No: retry status" edge="1" parent="1" source="statusdecision" target="status" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#7C9CFF;strokeWidth=2;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="350" y="1400"/><mxPoint x="350" y="1290"/></Array></mxGeometry></mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="renamefinal" target="uploadfinal" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="uploadfinal" target="email" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="email" target="cleanup" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="cleanup" target="writets" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="writets" target="end" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="right-to-offset" name="Right to Offset Automation">
+    <mxGraphModel dx="1147" dy="575" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#0B1020;" value="INTELLIGEN | RIGHT TO OFFSET AUTOMATION&#xa;A360 Mainframe Processing and Customer Loan Payment Review" vertex="1">
+          <mxGeometry height="70" width="920" x="140" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lane1" parent="1" style="swimlane;html=1;startSize=35;horizontal=1;fillColor=#7C9CFF;swimlaneFillColor=#F3F6FF;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="1. DATA INGESTION AND PREPARATION" vertex="1">
+          <mxGeometry height="350" width="1000" x="100" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="START&#xa;Receive Right to Offset input file" vertex="1">
+          <mxGeometry height="60" width="220" x="440" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="ingest" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Ingest Excel file&#xa;Customer loan payment data" vertex="1">
+          <mxGeometry height="60" width="260" x="420" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="transform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7C9CFF;strokeColor=#0B1020;fontColor=#0B1020;" value="Apply VBScript transformations&#xa;Clean and normalize dataset" vertex="1">
+          <mxGeometry height="65" width="300" x="400" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2" parent="1" style="swimlane;html=1;startSize=35;horizontal=1;fillColor=#7C9CFF;swimlaneFillColor=#F3F6FF;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="2. MAINFRAME AUTOMATION AND VALIDATION" vertex="1">
+          <mxGeometry height="470" width="1000" x="100" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="vault" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#7C9CFF;fontColor=#F3F6FF;" value="Authenticate to mainframe&#xa;Retrieve credentials from credential vault" vertex="1">
+          <mxGeometry height="65" width="320" x="390" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Log in to mainframe system&#xa;Establish authenticated session" vertex="1">
+          <mxGeometry height="65" width="320" x="390" y="645" as="geometry" />
+        </mxCell>
+        <mxCell id="macro" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7C9CFF;strokeColor=#0B1020;fontColor=#0B1020;" value="Execute mainframe macros&#xa;Process Right to Offset records" vertex="1">
+          <mxGeometry height="65" width="320" x="390" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="ocr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="OCR validation&#xa;Verify successful macro completion" vertex="1">
+          <mxGeometry height="65" width="320" x="390" y="835" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="Execution&#xa;successful?" vertex="1">
+          <mxGeometry height="90" width="230" x="435" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="retry" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F6FF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Handle failure&#xa;Capture error and retry or escalate" vertex="1">
+          <mxGeometry height="70" width="260" x="80" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="lane3" parent="1" style="swimlane;html=1;startSize=35;horizontal=1;fillColor=#71E0D0;swimlaneFillColor=#F3F6FF;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="3. OUTPUT, ARCHIVING AND BUSINESS NOTIFICATION" vertex="1">
+          <mxGeometry height="410" width="1000" x="100" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="lane3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#71E0D0;strokeColor=#0B1020;fontColor=#0B1020;fontStyle=1;" value="END&#xa;Automated, traceable workflow" vertex="1">
+          <mxGeometry height="55" width="230" x="335" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="output" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EDFF;strokeColor=#7C9CFF;fontColor=#0B1020;" value="Generate output files&#xa;Capture processed results" vertex="1">
+          <mxGeometry height="65" width="300" x="400" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="archive" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7C9CFF;strokeColor=#0B1020;fontColor=#0B1020;" value="Create archive&#xa;Package output files" vertex="1">
+          <mxGeometry height="65" width="300" x="400" y="1205" as="geometry" />
+        </mxCell>
+        <mxCell id="email" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0B1020;strokeColor=#71E0D0;fontColor=#F3F6FF;" value="Email business stakeholders&#xa;Share link to archived results" vertex="1">
+          <mxGeometry height="65" width="300" x="400" y="1300" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="ingest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="ingest" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="transform">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="transform" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="vault">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="vault" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="login" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="macro">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="macro" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="ocr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="ocr" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="decision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="decision" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#7C9CFF;strokeWidth=2;" target="retry" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="decision" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="output" value="Yes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="1035" />
+              <mxPoint x="550" y="1090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="output" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="archive">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="archive" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="email">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="email" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#0B1020;strokeWidth=2;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="retry" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;strokeColor=#7C9CFF;strokeWidth=2;" target="login" value="Retry / escalate">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="675" />
+              <mxPoint x="370" y="675" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
