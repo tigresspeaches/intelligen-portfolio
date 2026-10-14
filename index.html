@@ -251,16 +251,18 @@
             requests through a SOAP web service, retrieves results through
             REST APIs, and delivers reports to SharePoint.
           </p>
-          <h4>Workflow Architecture</h4>
+          <h4>Oracle Fusion Revenue Automation</h4>
           <div class="project-diagram">
-    <img
-      src="diagrams/Oracle_Rev_Automation_updated.svg"
-      alt="Oracle Fusion revenue automation workflow showing reporting window extraction, revenue report generation, API submission and monitoring, XML processing, Excel updates, SharePoint upload, and business notification"
-      loading="lazy"
-    />
     <p class="diagram-caption">
       Oracle Fusion → REST/SOAP APIs → Python → Excel → SharePoint
     </p>
+    <ol class="workflow-steps">
+    <li>Extract Reporting Window</li>
+    <li>Generate Revenue Report</li>
+    <li>Submit API Request &amp; Monitor Status</li>
+    <li>Decode XML &amp; Update Excel</li>
+    <li>SharePoint &amp; Business Notification</li>
+  </ol>
   </div>
   <h4>Engineering highlights</h4>
   <ul>
