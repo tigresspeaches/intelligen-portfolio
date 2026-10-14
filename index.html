@@ -244,40 +244,57 @@
         <article class="project">
           <div class="project-label">01 · Financial Automation</div>
           <h3>Oracle Fusion Revenue Automation</h3>
-          <div class="company">Triumvirate LLC</div>
+          <div class="company">Triumvirate LLC · Oracle Fusion · Python · REST/SOAP · SharePoint</div>
           <p>
             Built an end-to-end revenue reporting workflow that retrieves
             timestamp-based reporting data, processes Excel records, submits
             requests through a SOAP web service, retrieves results through
             REST APIs, and delivers reports to SharePoint.
           </p>
-          <h4>Engineering highlights</h4>
+          <h4>Workflow Architecture</h4>
           <div class="project-diagram">
-          <ul>
-            <li>Used the previous run timestamp and current time to define the reporting window.</li>
-            <li>Mapped Excel row values, null values, and detail values into dictionaries for a subtask bot with 37 submission parameters.</li>
-            <li>Polled API request status, decoded JSON response content, extracted process IDs, and retrieved XML output.</li>
-            <li>Transformed XML data into Excel, uploaded reports to SharePoint, and sent HTML email summaries.</li>
-            <li>Managed temporary-file cleanup and persisted the timestamp for the next run.</li>
-          </ul>
-     <p class="diagram-caption">
-    Workflow architecture · Oracle Fusion, REST/SOAP APIs,
-    Python, Excel, and SharePoint
-  </p>
-<div class="project-links">
-  <a href="diagrams/Oracle_Rev_Automation_updated.svg" target="_blank" rel="noopener">
-    View Workflow
-  </a>   
-</div>
-          <div class="tags">
-            <span class="tag">Automation Anywhere 360</span>
-            <span class="tag">Python</span>
-            <span class="tag">REST / SOAP</span>
-            <span class="tag">JSON / XML</span>
-            <span class="tag">Oracle Fusion</span>
-            <span class="tag">SharePoint</span>
-          </div>
-        </article>
+    <img
+      src="diagrams/Oracle_Rev_Automation_updated.svg"
+      alt="Oracle Fusion revenue automation workflow showing reporting window extraction, revenue report generation, API submission and monitoring, XML processing, Excel updates, SharePoint upload, and business notification"
+      loading="lazy"
+    />
+    <p class="diagram-caption">
+      Oracle Fusion → REST/SOAP APIs → Python → Excel → SharePoint
+    </p>
+  </div>
+  <h4>Engineering highlights</h4>
+  <ul>
+    <li>Used the previous run timestamp and current time to define the reporting window.</li>
+    <li>Mapped Excel row values, null values, and detail values into dictionaries for a subtask bot with 37 submission parameters.</li>
+    <li>Polled API request status, decoded JSON response content, extracted process IDs, and retrieved XML output.</li>
+    <li>Transformed XML data into Excel, uploaded reports to SharePoint, and sent HTML email summaries.</li>
+    <li>Managed temporary-file cleanup and persisted the timestamp for the next run.</li>
+  </ul>
+  <div class="project-links">
+    <a
+      href="diagrams/Oracle_Rev_Automation_updated.svg"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View Workflow
+  </a>
+
+    <a
+      href="diagrams/Oracle_Revenue_Editable.xml"
+      download
+    > 
+     Download Editable XML
+    </a>
+  </div>          
+  <div class="tags">
+    <span class="tag">Automation Anywhere 360</span>
+    <span class="tag">Python</span>
+    <span class="tag">REST / SOAP</span>
+    <span class="tag">JSON / XML</span>
+    <span class="tag">Oracle Fusion</span>
+    <span class="tag">SharePoint</span>
+  </div>
+</article>
         <article class="project">
           <div class="project-label">02 · Intelligent Document Processing</div>
           <h3>Benefits Forms & Human-in-the-Loop Workflow</h3>
