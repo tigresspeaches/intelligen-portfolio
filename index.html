@@ -152,6 +152,55 @@
       .project:first-child { grid-column: auto; }
       h1 { letter-spacing: -1px; }
     }
+    /* Intelligen workflow diagram previews */
+.project-diagram {
+  margin: 20px 0;
+  padding: 12px;
+  background: #0B1020;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.project-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.diagram-caption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 10px 0 0;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.project-links a {
+  display: inline-block;
+  padding: 9px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.project-links a:first-child {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--bg);
+}
+.project-links a:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.project-links a:first-child:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--bg);
+}
   </style>
 </head>
 <body>
