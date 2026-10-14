@@ -201,6 +201,41 @@
   border-color: var(--blue);
   color: var(--bg);
 }
+.workflow-steps {
+  list-style: none;
+  counter-reset: workflow;
+  padding: 0;
+  margin: 18px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.workflow-steps li {
+  counter-increment: workflow;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #1a2742;
+  border: 1px solid #2a3b5c;
+  border-radius: 8px;
+  color: #d2d9e9;
+}
+.workflow-steps li::before {
+  content: counter(workflow);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #7c9cff;
+  color: #0b1020;
+  font-weight: 800;
+}
+.project-links {
+  margin-top: 18px;
+}
   </style>
 </head>
 <body>
