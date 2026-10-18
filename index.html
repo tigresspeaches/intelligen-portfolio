@@ -164,7 +164,7 @@
   display: inline-block;
   padding: 9px 13px;
   border-radius: 8px;
-  border: 4px solid var(--blue);
+  border: 2px solid var(--blue);
   background-color: #71e0d0;(--teal);
   color: var(--button);
   text-decoration: none;
@@ -312,19 +312,37 @@
             TIFF files through AWS services, prepared PDF documents for AARI
             Copilot, and enabled human validation before updating business data.
           </p>
-          <h4>Engineering highlights</h4>
           <div class="project-diagram">
     <p class="diagram-caption">
     AWS document processing · AARI Copilot · Human validation · SQL Server
   </p>
+  <ol class="workflow-steps">
+    <li>Upload TIFF files to AWS S3 bucket</li>
+    <li>Convert PDF</li>
+    <li>AARI Create Request workflow</li>
+    <li>Human-in-Loophuman review</li>
+    <li>Validate data changes</li>
+    <li>Applied validated changes to SQL Server and handled cleanup and notifications.</li>
+  </ol>
 </div>
-          <ul>
-            <li>Uploaded TIFF files to AWS S3 and retrieved Lambda-processed versions.</li>
-            <li>Converted documents to PDF for downstream processing.</li>
-            <li>Designed an AARI Create Request workflow for human review and data validation.</li>
-            <li>Applied validated changes to SQL Server and handled cleanup and notifications.</li>
-          </ul>
-          <div class="tags">
+  <h4>Engineering highlights</h4>
+  <ul>
+    <li>Uploaded TIFF files to AWS S3 and retrieved Lambda-processed versions.</li>
+    <li>Converted documents to PDF for downstream processing.</li>
+    <li>Designed an AARI Create Request workflow for human review and data validation.</li>
+    <li>Applied validated changes to SQL Server and handled cleanup and notifications.</li>    
+  </ul>
+  <p>Explore the complete workflow achitecture</p>
+  <div class="project-links">
+    <a
+     hfref="diamgrams/Benefit_updated.svg
+      target="_blank"
+      rel="noopener noreferrer"
+      >
+      View Full Workflow
+    </a>
+  </div>
+            <div class="tags">
             <span class="tag">AARI Copilot</span>
             <span class="tag">AWS S3</span>
             <span class="tag">AWS Lambda</span>
