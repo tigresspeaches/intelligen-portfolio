@@ -208,7 +208,7 @@
   border: 1px solid #2a3b5c;
   border-radius: 8px;
   color: #d2d9e9;
-}
+  }
 .workflow-steps li::before {
   content: counter(workflow);
   display: grid;
@@ -220,6 +220,11 @@
   background: #7c9cff;
   color: #0b1020;
   font-weight: 800;
+  content: "↓";
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+  font-weight: bold;
 }
 .project-links {
   margin-top: 18px;   
