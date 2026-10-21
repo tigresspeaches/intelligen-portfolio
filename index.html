@@ -201,24 +201,22 @@
   border-radius: 8px;
   color: #d2d9e9;
 }
-
-/* Centered arrows between workflow steps */
+/* Put each arrow in the gap below its step */
 .workflow-steps li:not(:last-child)::after {
   content: "↓";
   display: block;
   height: 36px;
   line-height: 36px;
   margin-bottom: -36px;
-  transform: translateY(36px);
   color: #71e0d0;
   font-size: 22px;
   font-weight: 700;
   position: relative;
-  z-index: 1;
+  top: 36px;
   pointer-events: none;
 }
 
-/* Space for each arrow between the boxes */
+/* Create space between the boxes for the arrow */
 .workflow-steps li:not(:last-child) {
   margin-bottom: 36px;
 }
