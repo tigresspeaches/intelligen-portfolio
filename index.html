@@ -178,49 +178,51 @@
 }
 .workflow-steps {
   list-style: none;
-  counter-reset: workflow;
+  counter-reset: none;
   padding: 0;
-  margin: 16px 0;
-  display: grid;
-  gap: 5px;
-}
-.project:first-child .workflow-steps {
-  max-width: 650px;
-  width: 100%;
   margin: 18px auto;
-}
-.project:first-child .workflow-steps {
-  max-width: 650px;
-  width: 100%;
-  margin: 18px auto;
-}
-.project:first-child .workflow-steps li {
-  justify-content: center;
-  text-align: center;
-}
-.workflow-steps li {
-  counter-increment: workflow;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 0;
+  width: 100%;
+  max-width: 650px;
+}
+
+.workflow-steps li {
+  list-style: none;
+  display: block;
+  width: 100%;
+  margin: 0;
   padding: 12px 14px;
+  text-align: center;
   background: #1a2742;
   border: 1px solid #2a3b5c;
   border-radius: 8px;
   color: #d2d9e9;
-  }
-.workflow-steps li::before {
-  content: counter(workflow);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #7c9cff;
-  color: #0b1020;
-  font-weight: 800; 
- }
+}
+
+/* Centered arrows between workflow steps */
+.workflow-steps li:not(:last-child)::after {
+  content: "↓";
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: -36px;
+  transform: translateY(36px);
+  color: #71e0d0;
+  font-size: 22px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Space for each arrow between the boxes */
+.workflow-steps li:not(:last-child) {
+  margin-bottom: 36px;
+}
+
 .project-links {
   margin-top: 18px;   
 }
